@@ -8,11 +8,11 @@ module.exports = async (req, res) => {
     // Select the users collection from the database
     const users = await collection.find({}).toArray();
 
-    res.status(200).json({ users });
+    res.status(200).json({ msg: users });
   } else if (req.method === "POST") {
     // Take the user in the post
-    const newuser = req.headers;
-    const data = { newuser }
+    const headers = req.headers;
+    const data = { headers }
     // connect to the DB
     const db = await connectToDatabase();
     // Use our collection
