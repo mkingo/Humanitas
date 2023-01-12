@@ -8,7 +8,7 @@ module.exports = async (req, res) => {
     // Select the users collection from the database
     const users = await collection.find({}).toArray();
 
-    res.status(200).json({ msg: users });
+    res.status(200).json({ data: users });
   } else if (req.method === "POST") {
     // Take the user in the post
     const headers = req.headers;
